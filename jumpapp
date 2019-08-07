@@ -346,7 +346,8 @@ list_pids_for_command() {
 }
 
 list_pids_for_command_with_pgrep() {
-    pgrep -f "^(/.*/)?$1\b"
+    pgrep -f "^(/.*/)?$1(\s|$)"
+    # pgrep -f "^(/.*/)?$1\b"
 }
 
 list_pids_for_command_from_procfs() {
